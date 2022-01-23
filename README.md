@@ -34,3 +34,11 @@ const setTitle = useTitle(initalTitle);
 ```
 - `useTitle`은 타이틀 `tag` 의 상태관리를 쉽게 해주는 커스텀 훅 입니다.
 - `useTitle`은 `initalTitle`을 받고 `string` 타입을 갖습니다.
+
+## useClick
+```tsx
+const sayHi = () => console.log('say-hi')
+const element = useClick(sayHi)
+```
+-  `useClick`은  `tag`안 내장 객체에 `click` 이벤트가 없는 태그에 `click` 이벤트를 부여합니다.
+-  인자는 함수를 받아 `useRef()`을 반환 합니다.
