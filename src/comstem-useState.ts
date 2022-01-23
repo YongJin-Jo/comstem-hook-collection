@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
 
 /**
  * useInput 은 input 태그의 상태의 제어를 쉬게 해주는 함수입니다.
@@ -28,14 +28,13 @@ const useInput = <callback>(
   return { value, onChange };
 };
 
-
 /**
  * useTab은 click 이벤트에 떄라 상태 변화를 원하는 기능을 구현 할때 유용하게 쓰이는 커스텀 훅입니다.
- * @param initialTab 
- * @param allTabs 
+ * @param initialTab
+ * @param allTabs
  * @returns  {currentItem,changeItem}
  */
-const useTab = <T,>(
+const useTab = <T>(
   initialTab: number,
   allTabs: T[]
 ): { currentItem: T; changeItem: Dispatch<SetStateAction<number>> } => {
@@ -45,6 +44,5 @@ const useTab = <T,>(
     changeItem: setCurrentIndex,
   };
 };
-
 
 export { useInput, useTab };
