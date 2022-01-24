@@ -48,3 +48,11 @@ const element = useClick(sayHi)
 const createConfirm = useConfirm(mag,callback,rejection)
 ```
 -  useConfirm함수는 confirm을 호출했을 때 값이 ture 면 callback 함수를 fales 면 rejection 함수를 호출하는 함수 입니다.
+-  첫 인자는 string 타입을 받습니다.
+-  2번째 3번째 인자는 void 타입을 반환 받습니다.
+
+## usePreventLeave
+```tsx
+const {enablPrevent,disablePrevent} = usePreventLeave();
+```
+- usePreventLeve함수는 창을 닫을 때 confirm을 추가해주는 이벤트를 호출 하는 함수입니다.
