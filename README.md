@@ -56,3 +56,11 @@ const createConfirm = useConfirm(mag,callback,rejection)
 const {enablPrevent,disablePrevent} = usePreventLeave();
 ```
 - usePreventLeve함수는 창을 닫을 때 confirm을 추가해주는 이벤트를 호출 하는 함수입니다.
+
+## useBeforeLeave
+```tsx
+const createBeforeLeave = useBeforeLeave(onBefore)
+```
+-  useBeforeLeave 훅은 마우스 이벤트가 document에서 벗어 날때 함수를 호출할 수 있게 해주는 커스텀 훅입니다.
+-  첫번 째 인자 onBefore은 콜백로 정의 됩니다.
+

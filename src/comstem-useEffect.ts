@@ -35,4 +35,19 @@ const useClick = (onClick: () => void) => {
   return element as MutableRefObject<HTMLHeadingElement>;
 };
 
-export { useTitle, useClick };
+
+/**
+ * useBeforeLeave 훅은 마우스 이벤트가 document에서 벗어 날때 함수를 호출할수 있게 해주는 커스텀 훅입니다.
+ * @param onBefore 
+ */
+const useBeforeLeave = (onBefore: () => void) => {
+  const handle = (event: MouseEvent) => {
+    if (event.clientY <= 0) return onBefore();
+  };
+  useEffect(() => {
+    document.addEventListener('mouseleave', handle);
+    return () => document.removeEventListener('mouseleave', handle);
+  });
+};
+
+export { useTitle, useClick,useBeforeLeave };
