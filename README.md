@@ -42,3 +42,9 @@ const element = useClick(sayHi)
 ```
 -  `useClick`은  `tag`안 내장 객체에 `click` 이벤트가 없는 태그에 `click` 이벤트를 부여합니다.
 -  인자는 함수를 받아 `useRef()`을 반환 합니다.
+
+## useConfirm
+```tsx
+const createConfirm = useConfirm(mag,callback,rejection)
+```
+-  useConfirm함수는 confirm을 호출했을 때 값이 ture 면 callback 함수를 fales 면 rejection 함수를 호출하는 함수 입니다.
