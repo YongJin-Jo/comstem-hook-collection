@@ -73,5 +73,28 @@ const useFadeIn = (opacity: number, duration?: number, dely?: number) => {
   return { ref: element, style: { opacity: 0 } };
 };
 
+/**
+ * useNetWork 훅 navigator.onLine에 상태값에 따라 값을 반환하는 커스텀 훅입니다.
+ * @param onChange 
+ * @returns 
+ */
+const useNetWork = (onChange: (online: boolean) => void) => {
+  const [status, setStatus] = useState<boolean>(navigator.onLine);
+  const handleChange = () => {
+    if (typeof onChange === 'function') {
+      onChange(navigator.onLine);
+    }
+    setStatus(navigator.onLine);
+  };
+  useEffect(() => {
+    window.addEventListener('online', handleChange);
+    window.addEventListener('offline', handleChange);
+    return () => {
+      window.removeEventListener('online', handleChange);
+      window.removeEventListener('offline', handleChange);
+    };
+  }, []);
+  return status;
+};
 
 export { useTitle, useClick,useBeforeLeave,useFadeIn };

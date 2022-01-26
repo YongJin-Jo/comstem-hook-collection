@@ -70,3 +70,10 @@ const tagName = useFadeIn(opacity,duration,dely)
 ```
 - useFadeIn 훅은 opacity 과 transition를 쉽게 조작할 수 있게 만든 커스텀 훅입니다.
 - 3인자 전부 number타입을 받습니다.
+
+## useNetWork
+```tsx
+const status = useNetWork(onChange)
+```
+- useNetWork 훅 navigator.onLine에 상태값에 따라 값을 반환하는 커스텀 훅입니다.
+-  onChange의 타입 정의는 boolen 타입이 인자로 들어갑니다.
