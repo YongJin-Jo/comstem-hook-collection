@@ -77,3 +77,9 @@ const status = useNetWork(onChange)
 ```
 - useNetWork 훅 navigator.onLine에 상태값에 따라 값을 반환하는 커스텀 훅입니다.
 -  onChange의 타입 정의는 boolen 타입이 인자로 들어갑니다.
+
+## useScroll
+```tsx
+const {x,y} = useScroll()
+```
+- useScroll은 현재 스크롤 x,y값을 구해주는 커스텀 훅입니다.

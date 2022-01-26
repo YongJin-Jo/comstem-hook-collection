@@ -97,4 +97,19 @@ const useNetWork = (onChange: (online: boolean) => void) => {
   return status;
 };
 
-export { useTitle, useClick,useBeforeLeave,useFadeIn };
+/**
+ *  
+ * @returns state
+ */
+const useScroll = () => {
+  const [state, setState] = useState<{x:number,y:number}>({ x: 0, y: 0 });
+  const eventHandler = () => {
+    setState({ x: window.scrollX, y: window.scrollY });
+  };
+  useEffect(() => {
+    window.addEventListener('scroll', eventHandler);
+    return () => window.removeEventListener(`scroll`, eventHandler);
+  }, []);
+  return state;
+};
+export { useTitle, useClick,useBeforeLeave,useFadeIn,useScroll };
