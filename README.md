@@ -64,3 +64,9 @@ const createBeforeLeave = useBeforeLeave(onBefore)
 -  useBeforeLeave 훅은 마우스 이벤트가 document에서 벗어 날때 함수를 호출할 수 있게 해주는 커스텀 훅입니다.
 -  첫번 째 인자 onBefore은 콜백로 정의 됩니다.
 
+## useFadeIn
+```tsx
+const tagName = useFadeIn(opacity,duration,dely)
+```
+- useFadeIn 훅은 opacity 과 transition를 쉽게 조작할 수 있게 만든 커스텀 훅입니다.
+- 3인자 전부 number타입을 받습니다.
